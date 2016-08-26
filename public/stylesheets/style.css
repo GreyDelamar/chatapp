@@ -21,7 +21,8 @@ a {
  height: -moz-calc(100% - 35px);
  height: -webkit-calc(100% - 35px);
  height: calc(100% - 35px);
- padding-right: 10px;
+ padding-top: 7px;
+ padding-bottom: 7px;
  display: block;
  -moz-box-sizing:border-box;
  -webkit-box-sizing:border-box;
@@ -34,6 +35,13 @@ a {
  width: calc(100% - 80px);
 
 }
+
+#messages div:nth-child(even){
+  background: #EFFFEC;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
 #messages div:nth-child(odd){
   background: #eee;
   padding-top: 7px;
