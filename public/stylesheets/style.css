@@ -14,7 +14,6 @@ a {
  height: -webkit-calc(100% - 80px);
  height: calc(100% - 80px);
  background-color: #EFFFEC;
- padding-top: 50px;
 }
 
 #messages {
