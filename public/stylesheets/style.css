@@ -24,13 +24,14 @@ a {
  box-sizing:border-box;
 }
 
-#message {
+#messaged {
  width: -moz-calc(100% - 80px);
  width: -webkit-calc(100% - 80px);
  width: calc(100% - 80px);
+ padding-right: 80px;
 }
 
-#send {
+#ms {
  width: 74px;
  float: right;
 }
