@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var app = express();
+var http = require('http');
+var io = require('socket.io')(http);
+
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +59,11 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
 
 
 module.exports = app;
