@@ -10,6 +10,9 @@ $(function(){
     $('#messaged').val('');
   });
   socket.on('message', function(msg){
-    $('#messages').append($('<li>').text(msg));
+    $('#messages').append($('<div>').text(msg));
     });
+   $('#setname').click(function(){
+   socket.emit("set_name", {name: $('#nickname').val()});
+   });
 })

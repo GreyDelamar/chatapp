@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -7,18 +7,22 @@ a {
   color: #00B7FF;
 }
 
+
+
 #chatroom {
  height: -moz-calc(100% - 80px);
  height: -webkit-calc(100% - 80px);
  height: calc(100% - 80px);
  background-color: #EFFFEC;
+ padding-top: 50px;
 }
 
 #messages {
  height: -moz-calc(100% - 35px);
  height: -webkit-calc(100% - 35px);
  height: calc(100% - 35px);
- padding: 10px;
+ padding-right: 10px;
+ display: block;
  -moz-box-sizing:border-box;
  -webkit-box-sizing:border-box;
  box-sizing:border-box;
@@ -28,7 +32,12 @@ a {
  width: -moz-calc(100% - 80px);
  width: -webkit-calc(100% - 80px);
  width: calc(100% - 80px);
- padding-right: 80px;
+
+}
+#messages div:nth-child(odd){
+  background: #eee;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 #ms {
@@ -39,7 +48,7 @@ a {
 header{
  background-color:#4192C1;
  text-align: center;
- margin-top: 15px;
+ margin-top: 5px;
 }
 
 header h1{
