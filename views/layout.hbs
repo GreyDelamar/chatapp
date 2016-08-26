@@ -5,17 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <script src="/javascripts/chat.js"></script>
   </head>
   <body>
     <header id="banner">
       <h1>DaChat</h1>
     </header>
     <main>
-      <section id="chatroom">
-        <div id="messages"></div>
+      <section id="chatform">
+        <ul id="messages"></ul>
       </section>
-      <input type='text' id='message' placeholder='Enter your message here!'>
-      <input type='button' value='Send' id='send'>
+      <form id="chatBox">
+        <input type='text' id='messaged' placeholder='Enter your message here!'/>
+        <input type="submit" id="ms" value="SEND"/>
+      </form>
     </main>
   </body>
 </html>
