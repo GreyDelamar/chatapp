@@ -11,7 +11,22 @@
     <header id="banner">
       <h1>DaChat</h1>
     </header>
-    <main>
+    <section id="name" class="modal">
+      <div class="backdrop">
+        <div class="popup">
+          <div class="pophead">
+            <p>Please enter a name:</p>
+            <p id="nameErr"
+          </div>
+          <form id="setnick" class="popbody">
+            <input type='text' id='nickname'/>
+            <input type='submit' id='setname' value='Set Name'/>
+          </form>
+        </div>
+       </div>
+     </div>
+   </section>
+    <main id="chat">
       <section id="chatroom">
         <div id="messages"></div>
       </section>
@@ -19,6 +34,8 @@
         <input maxlength="1000" type='text' id='messaged' placeholder='Enter your message here!' required/>
         <input type="submit" id="ms" value="SEND"/>
       </form>
+      <section id="users">
+      </section>
     </main>
   </body>
 </html>
