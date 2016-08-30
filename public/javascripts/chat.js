@@ -8,6 +8,7 @@ $(function(){
       if(nme){
         $('#name').hide();
         $('#chat').show();
+        $('#chatBox').show();
       } else{
         $('#nameErr').html('That user name is already taken')
       }

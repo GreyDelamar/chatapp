@@ -19,7 +19,7 @@
             <p id="nameErr"
           </div>
           <form id="setnick" class="popbody">
-            <input type='text' id='nickname'/>
+            <input type='text' id='nickname' autofocus required/>
             <input type='submit' id='setname' value='Set Name'/>
           </form>
         </div>
@@ -27,15 +27,19 @@
      </div>
    </section>
     <main id="chat">
-      <section id="chatroom">
-        <div id="messages"></div>
-      </section>
-      <form id="chatBox">
-        <input maxlength="1000" type='text' id='messaged' placeholder='Enter your message here!' required/>
-        <input type="submit" id="ms" value="SEND"/>
-      </form>
-      <section id="users">
+      <section id="flexbox">
+        <section id="chatroom">
+          <div id="messages"></div>
+        </section>
+        <section id="users">
+        </section>
       </section>
     </main>
+    <section id="flexbox">
+      <form id="chatBox">
+        <input maxlength="1000" type='text' id='messaged' placeholder='Enter your message here!' required/>
+        <input type="submit" id="mSend" value="SEND"/>
+      </form>
+    </section>
   </body>
 </html>
