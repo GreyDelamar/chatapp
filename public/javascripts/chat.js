@@ -1,5 +1,5 @@
 var socket = io()
-
+var nicknames = $('<span>')
 
 $(function(){
   $('#setnick').submit(function(e){

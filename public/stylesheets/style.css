@@ -1,6 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 1vh 1vw;
+  font: 1.8vh "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #d3d3d3;
 }
 
@@ -10,6 +18,7 @@ a {
 
 #chat {
   display: none;
+  padding-top: 1vh;
 }
 
 #flexbox {
@@ -17,64 +26,85 @@ a {
 }
 
 #messages {
-  text-indent: 5px;
-  height: 90vw;
-  width: 80vw;
-  max-width: 80vw;
+  height: 83vh;
+  width: 77vw;
+}
+
+#messages div {
+  padding: 1em 1.6em;
+  word-wrap: break-word;
 }
 
 #messages div:nth-child(even){
   background: #EFFFEC;
-  padding-top: 7px;
-  padding-bottom: 7px;
 }
 
 #messages div:nth-child(odd){
   background: #eee;
-  padding-top: 7px;
-  padding-bottom: 7px;
 }
 
 #flexbox > #chatroom {
   overflow-y: scroll;
-  margin-top: 5px;
   background-color: #C4D1C2;
+  height: 83vh;
+  width: 77vw;
 }
 
 #chatBox {
   display: none;
-  padding-top: 1vw;
+  padding-top: 1vh;
 }
 
 #messaged {
-  font-size: 14px;
   width: 85vw;
+  height: 3vh;
 }
 
 #mSend {
-  width: 11vw;
-  height: 30px;
+  display: inline-block;
+  height: 3vh;
+  width: 12vw;
+  color: #FFFFFF;
+  cursor:pointer;
+  background: #4192C1;
+  background-image: linear-gradient(to bottom, #4192C1, #2980b9);
+  border-radius: 28px;
+  text-decoration: none;
+  -webkit-appearance: none;
+}
+
+#mSend:hover {
+  background: #3cb0fd;
+  color: #FFFFFF;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
 
 #flexbox > #users {
   overflow: auto;
-  height: 89vw;
+  height: 85vh;
   width: 20vw;
-  padding-left: 10px;
+  padding-left: 1vw;
 }
 
 header{
   display: flex;
   background-color:#4192C1;
-  text-align: center;
-  margin-top: 5px;
+  justify-content: center;
 }
 
 header h1{
-  padding: 5px;
-  padding-right: 15px;
   color: #FFFFFF;
-  margin: 0px
+  margin: 0;
+  padding: 1vw;
+}
+
+@media (max-width: 360px) {
+  #mSend {
+    width: 11vw;
+    padding: 0;
+
+  }
 }
 
 .modal{
@@ -112,4 +142,13 @@ vertical-align: middle;
 
 .popbody {
 padding: 10px 5px;
+}
+
+.btn {
+  background: #4192C1;
+  background-image: linear-gradient(to bottom, #4192C1, #2980b9);
+  border-radius: 28px;
+  color: #4192C1;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
