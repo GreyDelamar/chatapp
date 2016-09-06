@@ -58,6 +58,7 @@ a {
 #messaged {
   width: 85vw;
   height: 3vh;
+  font-size: 1.8vh;
 }
 
 #mSend {

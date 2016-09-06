@@ -31,7 +31,7 @@ var server = http.createServer(app);
 io.attach(server)
 
 server.listen(port, function(){
-  console.log('listening on: 3000');
+  console.log('listening on: 3001');
 });
 server.on('error', onError);
 server.on('listening', onListening);

@@ -2,7 +2,7 @@ var io = require('socket.io')();
 var nicknames = [];
 
 
-io.on("connection", function(socket){
+io.on('connection', function(socket){
   console.log('a user connected');
 
   socket.on('disconnect', function(){
@@ -25,6 +25,9 @@ io.on('connection', function(socket){
       nicknames.push(socket.nickname);
       io.emit('usernames', nicknames);
     }
+  });
+  socket.on('name-color', function(color){
+    io.emit('name-colored', color)
   });
 });
 

@@ -1,5 +1,5 @@
 var socket = io()
-var nicknames = $('<span>')
+// var nicknames = $('<span>')
 
 $(function(){
   $('#setnick').submit(function(e){
@@ -13,8 +13,12 @@ $(function(){
         $('#nameErr').html('That user name is already taken')
       }
     });
-    $('#nickname').val('');
+    $('#nickname').val('');;
   });
+
+  // socket.on('name-colored', function(data){
+  //
+  // });
 
   socket.on('usernames', function(nme){
     var html = '';
@@ -22,7 +26,7 @@ $(function(){
       html +=nme[i] + '<br/>'
     };
     $('#users').html(html);
-  })
+  });
 
   $('#chatBox').submit(function(f){
     socket.emit('message', $('#messaged').val());
@@ -30,11 +34,25 @@ $(function(){
     $('#messaged').val('');
   });
 
+
+  var $chat = $('#chatroom');
+  var bottom = true;
+
+  $chat.bind('scroll', function () {
+    var $scrollTop = $(this).scrollTop();
+    var $innerHeight = $(this).innerHeight();
+    var $scrollHeight = this.scrollHeight;
+    bottom = $scrollTop + $innerHeight >= $scrollHeight ? true : false;
+  });
+
+
   socket.on('newmessage', function(msg){
+
     $('#messages').append($('<div>').text(msg.nick+' : '+msg.mssg));
+
+    if (bottom) {
+      $chat.animate({scrollTop: $chat.prop("scrollHeight")}, 150);
+    }
   });
 
 })
-
-
-// $('#nickname')

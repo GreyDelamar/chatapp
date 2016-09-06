@@ -6,7 +6,7 @@
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
     <script src="/javascripts/chat.js"></script>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <header id="banner">
@@ -20,7 +20,8 @@
             <p id="nameErr"
           </div>
           <form id="setnick" class="popbody">
-            <input type='text' id='nickname' autofocus required/>
+            <input type='text' id='nickname' autofocus required  maxlength="20"/>
+            <input type='color' id='nameColor'/>
             <input type='submit' id='setname' value='Set Name'/>
           </form>
         </div>
