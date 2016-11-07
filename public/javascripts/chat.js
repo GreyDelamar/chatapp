@@ -28,7 +28,7 @@ $(function(){
       html +=nme.nick[i] + '<br/>'
     };
 
-    $('#users').html(html).addClass("username").css('color', nme.color);
+    $('#users').html(html).addClass("username");
   });
 
   $('#chatBox').submit(function(f){
