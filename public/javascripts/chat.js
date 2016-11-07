@@ -56,9 +56,14 @@ $(function(){
     var span = $('<span>').addClass("username").text(nick + ' : ').css('color', color);
     var span2 = $('<span>').text(mess);
 
-    div.append(span);
-    div.append(span2);
-    $('#messages').append(div);
+    if (nick == undefined) {
+      $('#name').show();
+      $('#chat').hide();
+    } else {
+      div.append(span);
+      div.append(span2);
+      $('#messages').append(div);
+    }
 
     if (bottom) {
       $chat.animate({scrollTop: $chat.prop("scrollHeight")}, 150);
