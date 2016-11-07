@@ -1,31 +1,34 @@
 var socket = io()
-// var nicknames = $('<span>')
 
 $(function(){
+  var $chat = $('#chatroom');
+  var bottom = true;
   $('#setnick').submit(function(e){
     e.preventDefault();
-    socket.emit('new-name', $('#nickname').val(), function(nme){
+
+    socket.emit('name-color',
+    $('#nameColor').val());
+
+    socket.emit('new-name',
+    $('#nickname').val(), function(nme){
       if(nme){
         $('#name').hide();
         $('#chat').show();
         $('#chatBox').show();
       } else{
-        $('#nameErr').html('That user name is already taken')
+        $('#nameErr').html('That username is already taken')
       }
     });
-    $('#nickname').val('');;
+    $('#nickname').val('');
   });
-
-  // socket.on('name-colored', function(data){
-  //
-  // });
 
   socket.on('usernames', function(nme){
     var html = '';
-    for(var i = 0; i<nme.length; i++){
-      html +=nme[i] + '<br/>'
+    for(var i = 0; i<nme.nick.length; i++){
+      html +=nme.nick[i] + '<br/>'
     };
-    $('#users').html(html);
+
+    $('#users').html(html).addClass("username").css('color', nme.color);
   });
 
   $('#chatBox').submit(function(f){
@@ -35,8 +38,7 @@ $(function(){
   });
 
 
-  var $chat = $('#chatroom');
-  var bottom = true;
+
 
   $chat.bind('scroll', function () {
     var $scrollTop = $(this).scrollTop();
@@ -47,8 +49,16 @@ $(function(){
 
 
   socket.on('newmessage', function(msg){
+    var div = $('<div>');
+    var nick = msg.nick;
+    var mess = msg.mssg;
+    var color = msg.color;
+    var span = $('<span>').addClass("username").text(nick + ' : ').css('color', color);
+    var span2 = $('<span>').text(mess);
 
-    $('#messages').append($('<div>').text(msg.nick+' : '+msg.mssg));
+    div.append(span);
+    div.append(span2);
+    $('#messages').append(div);
 
     if (bottom) {
       $chat.animate({scrollTop: $chat.prop("scrollHeight")}, 150);

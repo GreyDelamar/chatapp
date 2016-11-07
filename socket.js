@@ -3,7 +3,6 @@ var nicknames = [];
 
 
 io.on('connection', function(socket){
-  console.log('a user connected');
 
   socket.on('disconnect', function(){
     if(!socket.nickname) return;
@@ -14,7 +13,7 @@ io.on('connection', function(socket){
 
 io.on('connection', function(socket){
   socket.on('message', function(msg){
-    io.emit('newmessage', {mssg: msg, nick: socket.nickname});
+    io.emit('newmessage', {mssg: msg, nick: socket.nickname, color: socket.colorname});
   });
   socket.on('new-name', function(nme, callback){
     if (nicknames.indexOf(nme) != -1){
@@ -23,10 +22,11 @@ io.on('connection', function(socket){
       callback(true);
       socket.nickname = nme;
       nicknames.push(socket.nickname);
-      io.emit('usernames', nicknames);
+      io.emit('usernames', {nick: nicknames, color: socket.colorname});
     }
   });
   socket.on('name-color', function(color){
+    socket.colorname = color
     io.emit('name-colored', color)
   });
 });
